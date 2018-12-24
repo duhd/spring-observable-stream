@@ -68,7 +68,7 @@ dependencies {
    // cordaRuntime "$corda_release_group:corda-webserver:$corda_release_version"
 
     testCompile "$corda_release_group:corda-node-driver:$corda_release_version"
-
+    compile fileTree(dir: '../libs', include: '*.jar')
     // CorDapp dependencies
     // Specify your cordapp's dependencies below, including dependent cordapps
 }
