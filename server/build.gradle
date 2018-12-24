@@ -35,6 +35,7 @@ dependencies {
     testCompile "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
     testCompile "junit:junit:$junit_version"
     compile "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    compile "org.apache.activemq:artemis-core-client:2.2.0"
 
 
     // Corda integration dependencies
@@ -74,7 +75,7 @@ jar{
     mainClassName = "net.corda.server.ServerKt"
     manifest {
         attributes(
-                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                //'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
                 'Main-Class': 'net.corda.server.ServerKt'
         )
     }
