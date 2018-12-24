@@ -72,10 +72,10 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 jar{
     baseName = 'obligation-api'
     version = '0.1.0'
-    mainClassName = "net.corda.server.ServerKt"
     manifest {
         attributes(
                 //'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Class-Path': configurations.runtimeClasspath.files.collect { it.getName() }.join(' '),
                 'Main-Class': 'net.corda.server.ServerKt'
         )
     }
