@@ -11,7 +11,7 @@ import net.corda.testing.core.TestIdentity
 import net.corda.testing.node.ledger
 import org.junit.Test
 
-class ObligationContractIssueTests : ObligationContractUnitTests() {
+class   ObligationContractIssueTests : ObligationContractUnitTests() {
 
     @Test
     fun `issue obligation transaction must have no inputs`() {
