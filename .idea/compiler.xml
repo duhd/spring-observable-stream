@@ -21,6 +21,11 @@
       <module name="domain_test" target="1.8" />
       <module name="logging_main" target="1.8" />
       <module name="logging_test" target="1.8" />
+      <module name="net.corda.server-obligation_main" target="1.8" />
+      <module name="net.corda.server-obligation_test" target="1.8" />
+      <module name="obligation_integrationTest" target="1.8" />
+      <module name="obligation_main" target="1.8" />
+      <module name="obligation_test" target="1.8" />
       <module name="rate-provider-api_main" target="1.8" />
       <module name="rate-provider-api_test" target="1.8" />
       <module name="rate-provider_main" target="1.8" />
@@ -35,6 +40,8 @@
       <module name="service_test" target="1.8" />
       <module name="shared_main" target="1.8" />
       <module name="shared_test" target="1.8" />
+      <module name="spring-observable-stream-1_main" target="1.8" />
+      <module name="spring-observable-stream-1_test" target="1.8" />
       <module name="spring-observable-stream_main" target="1.8" />
       <module name="spring-observable-stream_test" target="1.8" />
       <module name="spring_main" target="1.8" />
