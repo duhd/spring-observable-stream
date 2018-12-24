@@ -76,7 +76,6 @@ jar{
                 'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
                 'Main-Class': 'net.corda.server.ServerKt'
         )
-        from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     }
 }
 
