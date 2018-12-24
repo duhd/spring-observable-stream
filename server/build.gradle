@@ -17,6 +17,10 @@ apply plugin: 'net.corda.plugins.cordapp'
 apply plugin: 'net.corda.plugins.cordformation'
 apply plugin: 'net.corda.plugins.quasar-utils'
 apply plugin: 'idea'
+apply plugin: 'application'
+
+//apply plugin: 'org.springframework.boot'
+//apply plugin: 'kotlin-spring'
 
 sourceSets {
     main {
@@ -64,6 +68,15 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 jar{
     baseName = 'obligation-api'
     version = '0.1.0'
+    mainClassName = "net.corda.server.ServerKt"
+}
+
+
+task runWebServer(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'net.corda.server.ServerKt'
+    environment "server.port", "80"
+    environment "config.rpc.port", "10002"
 }
 
 task runPartyAServer(type: JavaExec) {
