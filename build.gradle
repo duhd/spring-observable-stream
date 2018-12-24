@@ -66,28 +66,28 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 task deployNodes(type: net.corda.plugins.Cordform, dependsOn: ['jar']) {
     directory "./build/nodes"
     node {
-        name "O=Notary,L=London,C=GB"
+        name "O=Notary,L=Hanoi,C=VN"
         notary = [validating : true]
         p2pPort 10002
     }
     node {
-        name "O=PartyA,L=London,C=GB"
+        name "O=PartyA,L=Hanoi,C=VN"
         p2pPort 10005
         rpcSettings {
             address("localhost:10006")
             adminAddress("localhost:10046")
         }
-        cordapps = ["com.github.roger3cev:yo:4"]
-        rpcUsers = [[ user: "user1", "password": "test", "permissions": ["ALL"]]]
+        cordapps = ["net.corda.examples:obligation:4"]
+        rpcUsers = [[ user: "corda", "password": "not_blockchain", "permissions": ["ALL"]]]
     }
     node {
-        name "O=PartyB,L=New York,C=US"
+        name "O=PartyB,L=Hanoi,C=VN"
         p2pPort 10008
         rpcSettings {
             address("localhost:10009")
             adminAddress("localhost:10049")
         }
-        cordapps = ["com.github.roger3cev:yo:4"]
-        rpcUsers = [[ user: "user1", "password": "test", "permissions": ["ALL"]]]
+        cordapps = ["net.corda.examples:obligation:4"]
+        rpcUsers = [[ user: "corda", "password": "not_blockchain", "permissions": ["ALL"]]]
     }
 }
